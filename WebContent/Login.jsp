@@ -31,7 +31,7 @@
 	    			<td><input type="text" name="code"></td>
 	   			</tr>
 	  		</table><br>
-	  		<img src="http://0.0.0.0:8080/LoginCaptcha-0.0.1-SNAPSHOT/LoginCaptcha/CaptchaServlet">
+	  		<img src="http://0.0.0.0:8080/LoginCaptcha/CaptchaServlet">
 	  		<br><br>
 	  		<input type="submit" value="Login">
 		 </form>
@@ -40,7 +40,7 @@
 	 <%-- <c:out value="${sessionScope.username}"/> --%>
  	
  	<%
- 		HttpSession session = request.getSession(false);
+ 		HttpSession session = request.getSession();
  		if(session!=null) {
  	    	System.out.println("******** >>>>>>>>>>>>>>>>>check captcha in JSP page 2: "+session.getAttribute("captcha"));
  			System.out.println("********>>>>>>>>>>>>>>>>>>************ check user in JSP page : "+session.getAttribute("username"));
