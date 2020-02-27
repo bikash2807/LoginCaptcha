@@ -32,7 +32,7 @@
 	   			</tr>
 	  		</table><br>
 	  		<!-- <img src="http://localhost:8081/LoginCaptecha/CaptchaServlet"> -->
-	  		<img src="http://localhost:8082/LoginCaptecha/CaptchaServlet">
+	  		<img src="http://localhost:8080/LoginCaptecha/CaptchaServlet">
 	  		<br><br>
 	  		<input type="submit" value="Login">
 		 </form>
