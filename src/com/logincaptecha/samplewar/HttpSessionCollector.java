@@ -9,11 +9,8 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
-//import org.jboss.logging.Logger;
-
 public class HttpSessionCollector implements HttpSessionListener {
 	
-	//static Logger log = Logger.getLogger(HttpSessionCollector.class);
 	static Logger log = Logger.getAnonymousLogger();
 	
     private static final Map<String, HttpSession> sessions = new HashMap<String, HttpSession>();
@@ -27,9 +24,7 @@ public class HttpSessionCollector implements HttpSessionListener {
 			
 			sessionCount++;
 		}
-		
-		//System.out.println("Session Created: " + event.getSession().getId());
-		
+			
 		log.info("Session Count: " + sessionCount);
 		
 		HttpSession session = event.getSession();
@@ -46,8 +41,6 @@ public class HttpSessionCollector implements HttpSessionListener {
 		
 		sessions.put(session.getId(), session );
 		
-		//sessions.put(session.getId(),session.getAttributeNames());
-		//sessions.put(session.getId(),session.getCreationTime());
 	}
     
     @Override

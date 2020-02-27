@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login Page</title>
 	 <%-- <script type="text/javascript">
   		var loggedInUser = "<%= (String)session.getAttribute("username")%>";
   		if(isLoggedIn !=null){
@@ -31,8 +31,7 @@
 	    			<td><input type="text" name="code"></td>
 	   			</tr>
 	  		</table><br>
-	  		<!-- <img src="http://localhost:8081/LoginCaptecha/CaptchaServlet"> -->
-	  		<img src="http://localhost:8080/LoginCaptecha/CaptchaServlet">
+	  		<img src="http://0.0.0.0:8080/LoginCaptcha-0.0.1-SNAPSHOT/LoginCaptcha/CaptchaServlet">
 	  		<br><br>
 	  		<input type="submit" value="Login">
 		 </form>
@@ -41,38 +40,17 @@
 	 <%-- <c:out value="${sessionScope.username}"/> --%>
  	
  	<%
- 	
- 		
- 	
- 		HttpSession session = request.getSession(false); //&& session.getAttribute("username")!=null
- 		
- 		//System.out.println("******** >>>>>>>>>>>>>>>>>check captcha in JSP page 1: "+session.getAttribute("captcha"));
- 		
- 		//System.out.println("******** check session in JSP page : "+session);
- 		
-		//System.out.print("****************** check session work in JSP page : "+session.getAttribute("username")   );
- 		
- 	    if(session!=null) {
- 	    	
- 	    System.out.println("******** >>>>>>>>>>>>>>>>>check captcha in JSP page 2: "+session.getAttribute("captcha"));
-
- 		System.out.println("********>>>>>>>>>>>>>>>>>>************ check user in JSP page : "+session.getAttribute("username"));
- 	
- 		System.out.println("******** check session Captcha in JSP page : "+session.getAttribute("sessionCaptcha"));
- 		
-    	if(session.getAttribute("username")!=null) {
+ 		HttpSession session = request.getSession(false);
+ 		if(session!=null) {
+ 	    	System.out.println("******** >>>>>>>>>>>>>>>>>check captcha in JSP page 2: "+session.getAttribute("captcha"));
+ 			System.out.println("********>>>>>>>>>>>>>>>>>>************ check user in JSP page : "+session.getAttribute("username"));
+ 			System.out.println("******** check session Captcha in JSP page : "+session.getAttribute("sessionCaptcha"));
     		
-    		
-    		//session.invalidate();
-    		
-    		
-    		System.out.println("********* User after check user is not null to manage loggedIn User  : "+session.getAttribute("username"));
-    		
-    		response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/WelcomeServlet"));
-    		
-    	    return;
-    	    
-    	}
+ 			if(session.getAttribute("username")!=null) {
+    			System.out.println("********* User after check user is not null to manage loggedIn User  : "+session.getAttribute("username"));
+    			response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/WelcomeServlet"));
+    	    	return;
+    		}
  	    }
  	    /* else{
  	    	session.invalidate();

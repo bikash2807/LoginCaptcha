@@ -30,37 +30,26 @@ public class Logoutservlet extends HttpServlet {
 		try{
 			
 		HttpSession logutSession=request.getSession(false);
-		
 		if(logutSession!=null) {
-		
 			log.info("Session in logout page : "+logutSession);
-		
 		if(request.getParameter("logout") != null) {
 			logutSession.invalidate();
 		}
-		
-		else {
-			
+		else {	
 			response.sendRedirect("Logout.html");
 			//response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/Login.jsp"));
 		}
-		
 		log.info("invalidate session is : "+logutSession);
 		log.info("**** context path is :  "+request.getContextPath());
 		response.sendRedirect("Logout.html");
-		
 		pr.close();
 		}
 		else {
 			response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/Login.jsp"));
 			//response.sendRedirect("Login.jsp");
 		}
-		
 		}
-		
-		
     catch(Exception e){
-    	
     	System.out.println(e);
     }
 

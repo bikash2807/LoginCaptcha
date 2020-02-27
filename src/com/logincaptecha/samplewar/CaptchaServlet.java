@@ -22,15 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-//import javax.servlet.*;
-//import javax.servlet.http.*;
-import org.apache.catalina.util.Base64; 
-//import sun.misc.BASE64Encoder;
-//import org.jboss.logging.Logger;
-
 public class CaptchaServlet extends HttpServlet {
 	
-	//static Logger log = Logger.getLogger(CaptchaServlet.class);
 	static Logger log = Logger.getAnonymousLogger();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,15 +32,9 @@ public class CaptchaServlet extends HttpServlet {
     	
     	HttpSession ss = request.getSession(); 
     	
-    	//Cookie jsessionID = new Cookie("JSESSIONIDWithCookie", ss.getId());
-        //response.addCookie(jsessionID);
-    	
     	String captch = (String)ss.getAttribute("captcha");
     	
     	log.info("******Check captcha****************"+captch);
-    	//System.out.println("##### check user in Captcha Servlet : "+ss.getAttribute("username"));
-    	//System.out.println("##### check cooikeUser in Captcha servlet : "+userName);
-    	//System.out.println("#####  get contextPath : "+request.getContextPath());
     	
     	System.out.println(" *********************** check after create session ************");
     	
@@ -88,7 +75,7 @@ public class CaptchaServlet extends HttpServlet {
         g2d.setColor(new Color(255, 153, 0));
         Random r = new Random();
         int index = Math.abs(r.nextInt()) % 5;
-        String captcha = String.copyValueOf(s3).trim();
+        String captcha = String.copyValueOf(s3);
         
         log.info("*********Random generated CAptecha string when application  is start : "+ captcha);
         //request.getSession().setAttribute("captcha", captcha);
