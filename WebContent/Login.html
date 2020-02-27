@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Captcha</title>
+  <link rel="stylesheet" href="style.css">
+  
+ </head>
+	 <body>
+	 <center>
+	 <form action="SessionManagementServlet" method="post">
+	  <table cellspacing="15">
+	   <tr>
+	    <td>User</td>
+	    <td><input type="text" name="user"/></td>
+	   </tr>
+	   <tr>
+	    <td>Password</td>
+	    <td><input type="password" name="pass"/></p></td>
+	   </tr>
+	   <tr>
+	    <td>Captecha</td>
+	    <td><input type="text" name="code"></td>
+	   </tr>
+	  </table>
+	  <br>
+	  <img src="http://localhost:8080/LoginCaptecha/CaptchaServlet"> 
+	  <br><br>
+	  <input type="submit" value="Login">
+	 </form>
+	 </center>
+	 </body>
+</html>
