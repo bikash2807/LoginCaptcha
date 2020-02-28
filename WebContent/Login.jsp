@@ -31,11 +31,10 @@
 	    			<td><input type="text" name="code"></td>
 	   			</tr>
 	  		</table><br>
-	  		<img src="http://0.0.0.0:8080/LoginCaptcha/CaptchaServlet">
+	  		<img src="http://0.0.0.0:8080/LoginCaptcha-0.0.1-SNAPSHOT/CaptchaServlet">
 	  		<br><br>
 	  		<input type="submit" value="Login">
 		 </form>
-	 </center>
 	 
 	 <%-- <c:out value="${sessionScope.username}"/> --%>
  	
@@ -57,6 +56,7 @@
  	    	//response.sendRedirect("Login.jsp");
  	    }  */
   %>
+	 </center>
  
 </body>
 </html>
