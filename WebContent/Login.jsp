@@ -26,12 +26,12 @@
 	   				<td>Password</td>
 	   				<td><input type="password" name="pass"/></p></td>
 	  			</tr>
-	   			<tr>
+	   			<%--<tr>
 	    			<td>Captcha</td>
 	    			<td><input type="text" name="code"></td>
-	   			</tr>
+				</tr>--%>
 	  		</table><br>
-	  		<img src="http://0.0.0.0:8080/LoginCaptcha-0.0.1-SNAPSHOT/CaptchaServlet">
+			<%--<img src="http://0.0.0.0:8080/LoginCaptcha-0.0.1-SNAPSHOT/CaptchaServlet">--%>
 	  		<br><br>
 	  		<input type="submit" value="Login">
 		 </form>
